@@ -1,0 +1,28 @@
+[{
+    "name": "Moshe Levi",
+    "email": "moshe@gmail.com",
+    "birthdate": "2000-01-14 00:00:00",
+    "phones": ["0502233443", "0506677665"],
+    "avatar": "moshe.png"
+  },
+  {
+    "name": "Avi Cohen",
+    "email": "avi@gmail.com",
+    "birthdate": "2000-03-14 00:00:00",
+    "phones": ["0502233453"],
+    "avatar": "avi.png"
+  },
+  {
+    "name": "Shimi Israeli",
+    "email": "shimi@gmail.com",
+    "birthdate": "2000-01-14 23:33:44",
+    "avatar": "shimi.png"
+  },
+  {
+    "name": "Vered Bitun",
+    "email": "vered@gmail.com",
+    "birthdate": "1978-01-28 11:33:23",
+    "phones": ["0502233443", "0506677665", "0512244667"],
+    "avatar": "vered.png"
+  }
+]

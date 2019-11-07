@@ -1,0 +1,51 @@
+<app-page-header [headerTitle]="headerTitle" [headerIcon]="headerIcon"></app-page-header>
+
+<div *ngIf="contactsCache.length" class="row">
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="username" class="sr-only">Search Name</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa fa-search"></i></span>
+        </div>
+        <input [(ngModel)]="searchNameText" (keyup)="onKeyupSearch()" type="text" class="form-control" id="search-name"
+          placeholder="Search Name">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col">
+    <table *ngIf="contacts.length > 0; else nocontacts" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>NO.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Birthday</th>
+          <th>Phones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contact of contacts; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td><img class="mr-3" width="30px" src="assets/images/{{ contact.avatar }}">{{ contact.name }}</td>
+          <td>{{ contact.email | lowercase }}</td>
+          <td>{{ contact.birthdate | date:'dd/MM/yyyy' }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let phone of contact.phones">{{ phone }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #nocontacts>
+      <p>No Contacts Avialable</p>
+    </ng-template>
+
+
+
+  </div>
+</div>

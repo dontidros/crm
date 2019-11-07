@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate="novalidate" autocomplete="off">
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">COMPANY <i class="fa fa-angle-double-up text-success"></i> CRM</h1>
+        <p>Login with your account</p>
+      </div>
+      <div class="form-group mb-4">
+        <input type="email" name="email" id="email" placeholder="Email" class="form-control" #le="ngModel"
+          [(ngModel)]="email" [ngClass]="{'is-invalid': le.errors && le.touched}" required email>
+        <div class="invalid-feedback" [hidden]="!le.errors?.required">Email is required</div>
+        <div class="invalid-feedback" [hidden]="!le.errors?.email">Valid email is required</div>
+      </div>
+      <div class="form-group mb-4">
+        <input type="password" name="password" id="password" placeholder="Password" class="form-control" #lp="ngModel"
+          [(ngModel)]="password" [ngClass]="{'is-invalid': lp.errors && lp.touched}" required>
+        <div class="invalid-feedback" [hidden]="!lp.errors?.required">Password is required</div>
+      </div>
+      <button [disabled]="!loginForm.form.valid" type="submit" class="btn btn-primary btn-block">Sign In</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2019-2020</p>
+    </form>
+  </div>
+</div>
